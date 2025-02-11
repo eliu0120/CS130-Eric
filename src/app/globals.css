@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*General Styles*/
+.bigHeader {
+  margin-left: 28px;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%; 
+}
+
+.logoGeneral {
+  width: 52px;
+  height: 52px;
+  margin-right: 28px;
+  cursor: pointer;
+}
+
+
+/*Home Page Specific Styles*/
+.logoHome {
+  margin-left: 28px;
+  margin-top: 14px;
+  cursor: pointer;
+}
+
+.userIcon {
+  float: right;
+  width: 52px;
+  height: 52px;
+  margin-right: 28px;
+  margin-top: 14px;
+  cursor:pointer;
+}
+
+
+/*Login Page Specific Styles*/
+.loginContainer {
+  text-align: center;
+  transform: translate(0, 35%);
+}
+
+.logoLogin {
+  margin-left: auto;
+  margin-right: auto;
+  width: 275px;
+  height: 275px;
+}
+
+.loginButton {
+  margin-top: 25px;
+  display: block;
+}
+
+.boldText {
+  margin-top: 25px;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.loginBackground {
+  background-color: #FFD100;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+
+/*Account Page Specific Styles*/
+.buttonContainer {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%; 
+}
+
+
+/*Sellers Home Page Specific Styles*/
+.createButton {
+  cursor: pointer;
+}
+
+
+/*View listings page specific styles*/
+.viewListingsLogo {
+  display: 'block';
+  float: 'right'
+}
+
+.viewListingsContainer {
+  text-align: center;
+}
+
+.viewListingsTitle {
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+}
