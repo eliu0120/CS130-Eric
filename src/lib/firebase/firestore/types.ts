@@ -1,4 +1,4 @@
-interface Listing {
+export interface Listing {
     updated: string,
     title: string,
     price: number,
@@ -14,7 +14,7 @@ interface Listing {
     id: string, // firebase listing_id
   }
 
-interface User {
+export interface User {
     first: string,
     last: string,
     email_address: string,
@@ -28,7 +28,7 @@ interface User {
     id: string, // firebase user_id
 }
 
-function newListing(): Listing {
+export function newListing(): Listing {
     return {
         "updated": Date(),
         "title": "",
@@ -46,7 +46,7 @@ function newListing(): Listing {
     }
 }
 
-function newUser(): User {
+export function newUser(): User {
     return {
         "first": "",
         "last": "",

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { newListing } from "@/lib/firebase/firestore/types";
 
 /*
  * Get a Listing by id

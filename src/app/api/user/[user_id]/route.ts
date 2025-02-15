@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { newUser } from "@/lib/firebase/firestore/types";
 
 /*
  * Get a User by id

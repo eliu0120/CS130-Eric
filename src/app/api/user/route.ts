@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { User, newUser } from "@/lib/firebase/firestore/types";
 
 /*
  * Create new User

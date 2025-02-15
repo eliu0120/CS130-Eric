@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { Listing, newListing } from "@/lib/firebase/firestore/types";
 import getAllListings from "@/lib/firebase/firestore/listing/getAllListings";
 import addListing from "@/lib/firebase/firestore/listing/addListing";
 
@@ -40,12 +41,13 @@ export async function POST(req: Request) {
  *  data: list of Listings that match the query (truncated data)
  */
 export async function GET(req: Request) {
-  // get query data from req body
-  const data = await req.json();
+  // get query data from url
+  const queryData = Object.fromEntries((new URL(req.url)).searchParams.entries());
+  const { query, limit, last_listing_id } = queryData;
 
   // TODO: query listings from db
-
   const listing: Listing = newListing();
+
   return NextResponse.json({ data: { listings: [{
       updated: listing.updated,
       title: listing.title,
