@@ -10,7 +10,7 @@ import { NextResponse } from "next/server";
  * Return:
  *  data: the User object corresponding to the requested id
  *  error: error or null
-*/
+ */
 export async function GET(
     req: Request,
     { params }: { params: Promise<{ user_id: string }> }
@@ -20,7 +20,7 @@ export async function GET(
 
     // TODO: get User from db
 
-    return NextResponse.json({ data: {}, error: null });
+    return NextResponse.json({ data: newUser(), error: null });
   }
 
 /*
@@ -29,13 +29,13 @@ export async function GET(
  * Params:
  *  user_id: id of the User to get
  * Request body:
- *  first: first name
- *  last: last name
- *  pfp: path to pfp image
+ *  first: first name [optional]
+ *  last: last name [optional]
+ *  pfp: path to pfp image [optional]
  * Return:
  *  data: the updated User object corresponding to the requested id
  *  error: error or null
-*/
+ */
 export async function PATCH(
   req: Request,
   { params }: { params: Promise<{ user_id: string }> }
@@ -48,7 +48,7 @@ export async function PATCH(
 
   // TODO: update user in db
 
-  return NextResponse.json({ data: {}, error: null });
+  return NextResponse.json({ data: newUser(), error: null });
 }
 
 /*
@@ -61,7 +61,7 @@ export async function PATCH(
  * Return:
  *  data: id of the deleted User
  *  error: error or null
-*/
+ */
 export async function DELETE(
   req: Request,
   { params }: { params: Promise<{ user_id: string }> }
@@ -69,7 +69,7 @@ export async function DELETE(
   // get URL parameter user_id
   const user_id = (await params).user_id;
 
-  // TODO: delete user in db
+  // TODO: delete User in db
 
   return NextResponse.json({ data: { user_id: user_id }, error: null });
 }

@@ -1,5 +1,5 @@
 interface Listing {
-    updated: Date,
+    updated: string,
     title: string,
     price: number,
     condition: string,
@@ -9,7 +9,7 @@ interface Listing {
     selected_buyer: string, // buyer user_id
 	potential_buyers: string[], // user_ids of potential buyers
 	reporters: string[], // user_ids of reporters
-	ratings: { string: number }, // strings are user_ids mapped to number ratings
+	ratings: { [user_id: string]: number }, // strings are user_ids mapped to number ratings
 	image_paths: string[], // list of paths to imgs
     id: string, // firebase listing_id
   }
@@ -27,3 +27,37 @@ interface User {
     pfp: string, // path to profile picture img
     id: string, // firebase user_id
 }
+
+function newListing(): Listing {
+    return {
+        "updated": Date(),
+        "title": "",
+        "price": 0,
+        "condition": "",
+        "category": "",
+        "description": "",
+        "owner": "",
+        "selected_buyer": "",
+        "potential_buyers": [],
+        "reporters": [],
+        "ratings": {},
+        "image_paths": [],
+        "id": "",
+    }
+}
+
+function newUser(): User {
+    return {
+        "first": "",
+        "last": "",
+        "email_address": "",
+        "active_listings": [],
+        "interested_listings": [],
+        "completed_sales": 0,
+        "completed_purchases": 0,
+        "cum_buyer_rating": 0,
+        "cum_seller_rating": 0,
+        "pfp": "",
+        "id": "",
+    };
+  };
