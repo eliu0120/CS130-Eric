@@ -13,16 +13,16 @@ import { newUser } from "@/lib/firebase/firestore/types";
  *  error: error or null
  */
 export async function GET(
-    req: Request,
-    { params }: { params: Promise<{ user_id: string }> }
-  ) {
-    // get URL parameter user_id
-    const user_id = (await params).user_id;
+  req: Request,
+  { params }: { params: Promise<{ user_id: string }> }
+) {
+  // get URL parameter user_id
+  const user_id = (await params).user_id;
 
-    // TODO: get User from db
+  // TODO: get User from db
 
-    return NextResponse.json({ data: newUser(), error: null });
-  }
+  return NextResponse.json({ data: newUser(), error: null });
+}
 
 /*
  * Update a User by id

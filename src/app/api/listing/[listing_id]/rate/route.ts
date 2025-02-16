@@ -1,24 +1,25 @@
 import { NextResponse } from "next/server";
 
 /*
- * Rate Listing's Users (owner or buyer) by id
+ * Rate Listing by id
+ * If the user who rates the listing is the owner, then it will modify the buyer's rating
+ * If the user who rates the listing is the selected buyer, then it will modify the seller's rating
  *
  * Params:
  *  listing_id: id of the Listing to get
- *  user_id: id of the User being rated
+ *  user_id: id of the User who submitted the rating
  * Request body:
- *  rating: rating for the specified User in range [1-5]
+ *  rating: rating for the specified Listing in range [1-5]
  * Return:
  *  data: id of the updated Listing
  *  error: error or null
  */
 export async function PATCH(
   req: Request,
-  { params }: { params: Promise<{ listing_id: string, user_id: string }> }
+  { params }: { params: Promise<{ listing_id: string }> }
 ) {
   // get URL parameter listing_id
   const listing_id = (await params).listing_id;
-  const user_id = (await params).user_id;
 
   // get rating data from req body
   const data = await req.json();

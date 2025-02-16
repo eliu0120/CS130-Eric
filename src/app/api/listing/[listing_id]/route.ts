@@ -13,16 +13,16 @@ import { newListing } from "@/lib/firebase/firestore/types";
  *  error: error or null
  */
 export async function GET(
-    req: Request,
-    { params }: { params: Promise<{ listing_id: string }> }
-  ) {
-    // get URL parameter listing_id
-    const listing_id = (await params).listing_id;
+  req: Request,
+  { params }: { params: Promise<{ listing_id: string }> }
+) {
+  // get URL parameter listing_id
+  const listing_id = (await params).listing_id;
 
-    // TODO: get Listing from db
+  // TODO: get Listing from db
 
-    return NextResponse.json({ data: newListing(), error: null });
-  }
+  return NextResponse.json({ data: newListing(), error: null });
+}
 
 /*
  * Update a Listing by id

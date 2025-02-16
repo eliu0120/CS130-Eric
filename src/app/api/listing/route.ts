@@ -49,15 +49,14 @@ export async function GET(req: Request) {
   const listing: Listing = newListing();
 
   return NextResponse.json({ data: { listings: [{
-      updated: listing.updated,
-      title: listing.title,
-      price: listing.price,
-      owner_id: listing.owner,
-      owner_pfp: "",
-      seller_rating: 0,
-      description: listing.description,
-      thumbnail: listing.image_paths.length > 0 ? listing.image_paths[0] : "",
-      id: listing.id,
-    }]
-  }, error: null });
+    updated: listing.updated,
+    title: listing.title,
+    price: listing.price,
+    owner_id: listing.owner,
+    owner_pfp: "",
+    seller_rating: 0,
+    description: listing.description,
+    thumbnail: listing.image_paths.length > 0 ? listing.image_paths[0] : "",
+    id: listing.id,
+  }]}, error: null });
 }

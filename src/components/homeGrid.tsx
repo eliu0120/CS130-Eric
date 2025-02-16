@@ -22,6 +22,11 @@ const HomeGrid: React.FC = () => {
       method: "GET",
     });
 
+    const test = await fetch("/api/listing/123/rate", {
+      method: "PATCH",
+      body: JSON.stringify({"user_id": "432"}),
+    });
+
     const { result, error } = await response.json();
 
     if (error) {
