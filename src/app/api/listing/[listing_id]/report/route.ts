@@ -18,7 +18,7 @@ export async function PATCH(
   // get URL parameter listing_id
   const listing_id = (await params).listing_id;
 
-  // get report data from req body
+  // get reporter data from req body
   const data = await req.json();
 
   // TODO: update listing in db

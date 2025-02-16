@@ -33,7 +33,7 @@ export async function POST(req: Request) {
  *
  * Params:
  *  None
- * Request body:
+ * Query Params:
  *  query: filter/sort query for Listing search
  *  limit: max number of Listings to retrieve
  *  last_listing_id: id of last Listing retrieved
