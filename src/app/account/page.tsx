@@ -20,6 +20,7 @@ import Grid from "@mui/material/Grid2";
 import EditIcon from '@mui/icons-material/Edit';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from "@/lib/authContext";
+import Image from "next/image";
 
 
 // Define properties needed for user settings
@@ -288,11 +289,13 @@ const Account: React.FC = () => {
             <div className="logoContainer">
                 <p className="bigHeader">My account</p>
 
-                <img
-                    src="logo1.png"
+                <Image
+                    src="/logo1.png"
                     alt="logo"
                     className="logoGeneral"
                     onClick={() => router.push("/")}
+                    width="52"
+                    height="52"
                 />
             </div>
 
