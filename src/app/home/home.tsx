@@ -10,6 +10,7 @@ import Modal from "@mui/material/Modal";
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import { useAuth } from "@/lib/authContext";
+import Image from "next/image";
 
 const Home: React.FC = () => {
     // For routing purposes
@@ -57,11 +58,13 @@ const Home: React.FC = () => {
         <div>
             <Grid container alignItems="center" spacing={2} size={{ xs: 12, sm: 12, md: 12 }}>
                 <Grid size={{ xs: 3, sm: 3, md: 3 }}>
-                    <img
-                        src="logo1.png"
+                    <Image
+                        src="/logo1.png"
                         alt="home page logo"
                         className="logoGeneral logoHome"
                         onClick={() => window.location.reload()}
+                        width="52"
+                        height="52"
                     />
                 </Grid>
 
@@ -80,7 +83,7 @@ const Home: React.FC = () => {
                             input: {
                                 startAdornment: (
                                     <InputAdornment position="start" onClick={handleQuerySubmit} style={{ cursor: "pointer" }}>
-                                        <img src="search.svg" width="24" height="24" />
+                                        <Image src="/search.svg" alt="search" width="24" height="24" />
                                     </InputAdornment>
                                 ),
                             },
@@ -91,11 +94,13 @@ const Home: React.FC = () => {
                 </Grid>
 
                 <Grid size={{ xs: 3, sm: 3, md: 3 }}>
-                    <img
-                        src="icon.png"
+                    <Image
+                        src="/icon.png"
                         alt="user icon"
                         className="userIcon"
                         onClick={handleLogin}
+                        width="52"
+                        height="52"
                     />
                 </Grid>
 
