@@ -110,7 +110,6 @@ const SellersHome: React.FC = () => {
           interestedUsersMap[listing.id] = users.filter(Boolean);
         })
       );
-
       setInterestedUsers(interestedUsersMap);
     } catch (err) {
       console.error("Error fetching interested users:", err);
@@ -326,11 +325,9 @@ const SellersHome: React.FC = () => {
                             <Avatar src={user.pfp} alt={user.first} />
                           </ListItemAvatar>
                           <ListItemText primary={user.first} className="flex-1 text-black" />
-                          <div className="flex items-center justify-center w-full">
-                            {[...Array(Math.round(user.cum_buyer_rating))].map((_, index) => (
-                              <StarIcon key={index} className="text-yellow-500" />
-                            ))}
-                          </div>
+                          <div className="absolute right-[40%] flex items-center">
+                            <Rating name="read-only" value={user.buyer_rating} readOnly />
+                            </div>
                           <div className="absolute right-4 flex">
                             <IconButton
                               color="success"
